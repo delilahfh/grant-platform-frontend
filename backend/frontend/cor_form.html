@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Certificate of Receipt</title>
+</head>
+<body>
+  <h2>Certificate of Receipt</h2>
+  <form id="corForm">
+    <label>Delivered items / services (one per line)</label><br>
+    <textarea id="items_text" rows="6" cols="60"></textarea><br><br>
+    <button type="button" onclick="saveCor()">Save Certificate</button>
+  </form>
+
+<script>
+function saveCor() {
+  alert("This form will call /cor/create with items_text joined by newlines.");
+}
+</script>
+</body>
+</html>

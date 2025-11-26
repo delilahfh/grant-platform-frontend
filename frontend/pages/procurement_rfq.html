@@ -1,0 +1,24 @@
+<div class="section">
+  <h2>Request for Quotation</h2>
+  <label>Procurement Type</label>
+  <select id="rfq_type">
+    <option value="service">Service</option>
+    <option value="product">Product</option>
+    <option value="works">Works</option>
+    <option value="consultancy">Consultancy</option>
+  </select>
+  <label>Description of Items</label>
+  <textarea id="rfq_desc"></textarea>
+  <button onclick="submitRFQ()">Generate RFQ</button>
+</div>
+<script>
+async function submitRFQ() {
+  const data = {
+    type: document.getElementById("rfq_type").value,
+    description: document.getElementById("rfq_desc").value
+  };
+  const res = await postJSON("/request-for-quotation", data);
+  if (res && !res.detail) showNotice("success","RFQ submitted / generated");
+  else showNotice("error","Error submitting RFQ");
+}
+</script>

@@ -1,0 +1,7 @@
+
+<h2>Financial Report</h2>
+<button onclick="create()">Create New Report</button>
+<script src="../static/js/api.js"></script>
+<script>
+async function create(){await api('/financial-reports/create','POST',{});alert('created');}
+</script>

@@ -1,0 +1,19 @@
+
+<h1>Financial Report</h1>
+<div class='section'>
+  <h3>Expenditures List</h3>
+  <table id='expTable' border='1' width='100%' style='border-collapse:collapse'>
+    <tr><th>Date</th><th>Budget Line</th><th>Cost</th><th>Currency</th><th>Notes</th></tr>
+  </table>
+  <button onclick='addExp()'>Add Entry</button>
+</div>
+<script>
+function addExp(){
+ let t=document.getElementById('expTable');
+ let r=t.insertRow();
+ ['date','text','number','text','text'].forEach(type=>{
+   let c=r.insertCell();
+   c.innerHTML="<input type='"+type+"' />";
+ });
+}
+</script>

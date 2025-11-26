@@ -1,0 +1,27 @@
+<div class="section">
+  <h2>Login</h2>
+  <label>Email</label>
+  <input id="login_email" type="email">
+  <label>Password</label>
+  <input id="login_password" type="password">
+  <button onclick="doLogin()">Login</button>
+  <p>Don't have an account? <a href="#/register">Register</a></p>
+</div>
+<script>
+async function doLogin() {
+  const email = document.getElementById("login_email").value;
+  const password = document.getElementById("login_password").value;
+  const res = await postJSON("/login", { email, password });
+  if (res.token) {
+    setToken(res.token);
+    const role = res.type || "applicant";
+    setRole(role);
+    if (role === "admin") window.location.hash = "#/admin/dashboard";
+    else if (role === "participant") window.location.hash = "#/participant/dashboard";
+    else window.location.hash = "#/applicant/dashboard";
+    showNotice("success", "Logged in");
+  } else {
+    showNotice("error", "Login failed");
+  }
+}
+</script>

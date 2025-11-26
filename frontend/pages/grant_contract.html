@@ -1,0 +1,19 @@
+<div class="section">
+  <h2>Grant Contract</h2>
+  <label>Applicant ID or Code</label>
+  <input id="gc_applicant">
+  <label>Contract Notes</label>
+  <textarea id="gc_notes"></textarea>
+  <button onclick="submitGrantContract()">Generate / Submit Contract</button>
+</div>
+<script>
+async function submitGrantContract(){
+  const data={
+    applicant: document.getElementById("gc_applicant").value,
+    notes: document.getElementById("gc_notes").value
+  };
+  const res=await postJSON("/grant-contract",data);
+  if(res && !res.detail) showNotice("success","Grant contract submitted");
+  else showNotice("error","Error submitting grant contract");
+}
+</script>

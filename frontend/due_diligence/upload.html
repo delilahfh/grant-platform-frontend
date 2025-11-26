@@ -1,0 +1,11 @@
+
+<h2>Due Diligence</h2>
+<input type=file id=f multiple><br>
+<button onclick="up()">Upload</button>
+<script>
+async function up(){
+ let fd=new FormData(); for(let x of f.files) fd.append('files',x);
+ let r=await fetch('http://127.0.0.1:8000/due-diligence/upload',{method:'POST',body:fd,headers:{'Authorization':'Bearer '+localStorage.getItem('token')}});
+ alert(r.ok?'done':'fail');
+}
+</script>

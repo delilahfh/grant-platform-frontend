@@ -1,0 +1,28 @@
+<div class="section">
+  <h2>Certificate of Receipt</h2>
+  <table id="cor_table">
+    <thead><tr><th>Item</th><th>Description</th><th>Quantity</th></tr></thead>
+    <tbody></tbody>
+  </table>
+  <button onclick="addCorRow()">Add Item</button>
+  <button onclick="submitCor()">Submit Certificate of Receipt</button>
+</div>
+<script>
+function addCorRow(){
+  const tb=document.querySelector("#cor_table tbody");
+  const tr=document.createElement("tr");
+  ["item","desc","qty"].forEach(()=>{const td=document.createElement("td");td.innerHTML="<input>";tr.appendChild(td);});
+  tb.appendChild(tr);
+}
+async function submitCor(){
+  const rows=Array.from(document.querySelectorAll("#cor_table tbody tr"));
+  const items=rows.map(tr=>{
+    const [a,b,c]=Array.from(tr.querySelectorAll("input")).map(i=>i.value);
+    return { item:a, description:b, quantity:c };
+  });
+  const res=await postJSON("/certificate-of-receipt",{ items });
+  if(res && !res.detail) showNotice("success","Certificate of receipt submitted");
+  else showNotice("error","Error submitting certificate of receipt");
+}
+addCorRow();
+</script>

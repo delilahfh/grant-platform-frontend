@@ -1,0 +1,18 @@
+
+<h1>Admin – Review Applications</h1>
+<div class='section'>
+<table id='revTable' border='1' width='100%' style='border-collapse:collapse'>
+<tr><th>Applicant</th><th>Status</th><th>View</th><th>Approve</th><th>Reject</th></tr>
+</table>
+<button onclick='addReviewRow()'>Add Dummy</button>
+</div>
+<script>
+function addReviewRow(){
+ let t=document.getElementById('revTable');
+ let r=t.insertRow();
+ ['Name','Pending','View','Approve','Reject'].forEach(val=>{
+   let c=r.insertCell();
+   c.innerHTML = (val=='View' || val=='Approve' || val=='Reject') ? "<button>"+val+"</button>" : val;
+ });
+}
+</script>

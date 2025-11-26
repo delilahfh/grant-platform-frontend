@@ -1,0 +1,1 @@
+# proposals schemas placeholder

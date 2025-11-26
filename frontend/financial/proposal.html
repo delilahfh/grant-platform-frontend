@@ -1,0 +1,12 @@
+
+<h2>Financial Proposal</h2>
+<div id=lines></div>
+<button onclick="add()">Add line</button>
+<button onclick="submitProp()">Submit</button>
+<script src="../static/js/api.js"></script>
+<script>
+let arr=[];
+function add(){arr.push({heading:'',name:'',unit:0,price:0});render();}
+function render(){lines.innerHTML='';arr.forEach((l,i)=>{lines.innerHTML+=`<div><input placeholder=heading oninput="arr[${i}].heading=this.value"><input placeholder=name oninput="arr[${i}].name=this.value"><input type=number placeholder=unit oninput="arr[${i}].unit=this.value"><input type=number placeholder=price oninput="arr[${i}].price=this.value"></div>`})}
+async function submitProp(){await api('/financial-proposals/create','POST',{lines:arr});alert('submitted');}
+</script>

@@ -1,0 +1,8 @@
+
+<h2>Launch Procurement</h2>
+<input id=desc placeholder="Description"><br>
+<button onclick="go()">Launch</button>
+<script src="../static/js/api.js"></script>
+<script>
+async function go(){await api('/procurement/launch','POST',{description:desc.value});alert('ok');}
+</script>

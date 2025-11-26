@@ -1,0 +1,8 @@
+
+<h2>Narrative Report</h2>
+<textarea id=t rows=6 cols=60></textarea><br>
+<button onclick="s()">Submit</button>
+<script src="../static/js/api.js"></script>
+<script>
+async function s(){await api('/narrative-reports/create','POST',{text:t.value});alert('ok');}
+</script>
