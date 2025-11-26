@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Financial Amendment</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 6px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Financial Amendment Form</h2>
+    <form id="financialAmendmentForm">
+        <label>Organization/Participant Name: <input type="text" name="org_name" required></label><br>
+        <label>Participant Code: <input type="text" name="participant_code" required></label><br>
+
+        <h3>Procurement of Machinery and/or Products</h3>
+        <table id="machineryTableAmend">
+            <tr>
+                <th>Budget Line Name</th>
+                <th>Item/Service Needed</th>
+                <th>Quantity</th>
+                <th>Unit Cost</th>
+                <th>Total Cost</th>
+                <th>Name of Provider</th>
+            </tr>
+        </table>
+        <button type="button" onclick="addRow('machineryTableAmend')">Add Row</button>
+
+        <h3>Services, Trainings, Consultancies and Certifications</h3>
+        <table id="servicesTableAmend">
+            <tr>
+                <th>Budget Line Name</th>
+                <th>Item/Service Needed</th>
+                <th>Quantity</th>
+                <th>Unit Cost</th>
+                <th>Total Cost</th>
+                <th>Name of Provider</th>
+            </tr>
+        </table>
+        <button type="button" onclick="addRow('servicesTableAmend')">Add Row</button>
+
+        <h3>Salaries & HR</h3>
+        <table id="hrTableAmend">
+            <tr>
+                <th>Budget Line Name</th>
+                <th>Item/Service Needed</th>
+                <th>Quantity</th>
+                <th>Unit Cost</th>
+                <th>Total Cost</th>
+                <th>Name of Provider</th>
+            </tr>
+        </table>
+        <button type="button" onclick="addRow('hrTableAmend')">Add Row</button>
+
+        <h3>Running Costs</h3>
+        <table id="runningCostsTableAmend">
+            <tr>
+                <th>Budget Line Name</th>
+                <th>Item/Service Needed</th>
+                <th>Quantity</th>
+                <th>Unit Cost</th>
+                <th>Total Cost</th>
+                <th>Name of Provider</th>
+            </tr>
+        </table>
+        <button type="button" onclick="addRow('runningCostsTableAmend')">Add Row</button>
+
+        <br><br>
+        <button type="submit">Download Financial Amendment</button>
+    </form>
+    <p id="statusMessage"></p>
+
+    <script>
+        function addRow(tableId) {
+            const table = document.getElementById(tableId);
+            const row = table.insertRow();
+            for (let i = 0; i < 6; i++) {
+                const cell = row.insertCell();
+                const input = document.createElement("input");
+                input.type = "text";
+                input.name = `${tableId}_row_${table.rows.length - 1}_col_${i}`;
+                cell.appendChild(input);
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

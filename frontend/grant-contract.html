@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Grant Contract</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h2>Grant Contract Generator</h2>
+<form>
+    <label>Contract Signature Date: <input type="date"></label><br>
+    <label>Grantee Code: <input type="text"></label><br>
+    <label>Org Name: <input type="text"></label><br>
+    <label>Org Location: <input type="text"></label><br>
+    <label>Registration #: <input type="text"></label><br>
+    <label>MOF #: <input type="text"></label><br>
+    <label>Signatory Name: <input type="text"></label><br>
+    <label>Signatory Role: <input type="text"></label><br>
+    <label>Contract End Date: <input type="date"></label><br>
+    <label>Contract Duration (months): <input type="number"></label><br>
+    <label>Number of Instalments: <input type="number" id="instalments" onchange="genInstalments()"></label><br>
+    <div id="instalmentFields"></div>
+    <label>Bank Name: <input type="text"></label><br>
+    <label>IBAN: <input type="text"></label><br>
+    <label>SWIFT: <input type="text"></label><br>
+    <label>Bank Branch: <input type="text"></label><br>
+    <label>Other Bank Details: <input type="text"></label><br>
+    <button type="button">Upload Annexes</button><br><br>
+    <button type="submit">Download</button>
+</form>
+<script>
+function genInstalments() {
+    const num = parseInt(document.getElementById('instalments').value);
+    const div = document.getElementById('instalmentFields');
+    div.innerHTML = '';
+    for (let i = 1; i <= num; i++) {
+        div.innerHTML += `<label>Instalment ${i} Condition: <input type="text"></label><br>`;
+        div.innerHTML += `<label>Instalment ${i} Amount: <input type="number"></label><br>`;
+    }
+}
+</script>
+<script src="script.js"></script>
+</body>
+</html>

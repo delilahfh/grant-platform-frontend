@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Delivery Certificate</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Delivery Certificate</h1>
+
+<form id="deliveryForm">
+
+  <label>Delivered Items (one per line):</label>
+  <textarea id="items" placeholder="Item 1
+Item 2
+Item 3"></textarea>
+
+  <label>Supplier Name:</label>
+  <input type="text" id="supplier">
+
+  <label>Delivery Date:</label>
+  <input type="date" id="date">
+
+  <button type="submit">Generate Certificate</button>
+
+</form>
+
+<script src="delivery.js"></script>
+</body>
+</html>

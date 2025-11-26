@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Request for Instalment</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Request for Instalment</h1>
+
+<form id="fundForm">
+
+  <label>Requested Amount (numbers):</label>
+  <input type="number" id="amount">
+
+  <label>Requested Amount (letters):</label>
+  <input type="text" id="amountText">
+
+  <label>Bank Account Name:</label>
+  <input type="text" id="accName">
+
+  <label>Bank Account Number:</label>
+  <input type="text" id="accNumber">
+
+  <label>IBAN:</label>
+  <input type="text" id="iban">
+
+  <label>SWIFT Code:</label>
+  <input type="text" id="swift">
+
+  <label>Bank Name:</label>
+  <input type="text" id="bank">
+
+  <button type="submit">Generate Request</button>
+
+</form>
+
+<script src="fund.js"></script>
+</body>
+</html>

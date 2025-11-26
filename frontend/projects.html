@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Projects Management</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Projects Management</h1>
+
+<form id="projectForm">
+  <label>Project Title:</label>
+  <input type="text" id="title">
+
+  <label>Donor:</label>
+  <input type="text" id="donor">
+
+  <label>Reporting Months (number):</label>
+  <input type="number" id="months">
+
+  <label>Upload Visibility Header/Footer (optional):</label>
+  <input type="file" id="branding">
+
+  <button type="submit">Create Project</button>
+</form>
+
+<h2>Existing Projects</h2>
+<div id="projects"></div>
+
+<script src="projects.js"></script>
+</body>
+</html>

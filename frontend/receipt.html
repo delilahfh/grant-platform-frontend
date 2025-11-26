@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Certificate of Receipt</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Certificate of Receipt</h1>
+
+<form id="receiptForm">
+
+  <label>Delivered Items/Services (one per line):</label>
+  <textarea id="items" placeholder="Item 1\nItem 2\nItem 3"></textarea>
+
+  <label>Recipient Name:</label>
+  <input type="text" id="recipient">
+
+  <label>Receipt Date:</label>
+  <input type="date" id="date">
+
+  <button type="submit">Generate Certificate</button>
+
+</form>
+
+<script src="receipt.js"></script>
+</body>
+</html>

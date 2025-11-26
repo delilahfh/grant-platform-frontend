@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Register</h2>
+    <form id="registerForm">
+        <label>Username: <input type="text" id="regUsername" required></label><br>
+        <label>Password: <input type="password" id="regPassword" required></label><br>
+        <label>Role:
+            <select id="role">
+                <option value="grantee">Grantee</option>
+                <option value="agency">Agency</option>
+            </select>
+        </label><br>
+        <button type="submit">Register</button>
+    </form>
+    <p id="registerMessage"></p>
+    <script src="script.js"></script>
+</body>
+</html>
