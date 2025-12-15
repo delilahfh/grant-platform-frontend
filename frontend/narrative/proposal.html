@@ -1,8 +1,0 @@
-
-<h2>Narrative Proposal</h2>
-<textarea id=txt rows=10 cols=60></textarea><br>
-<button onclick="sub()">Submit</button>
-<script src="../static/js/api.js"></script>
-<script>
-async function sub(){await api('/narrative-proposals/create','POST',{text:txt.value});alert('ok');}
-</script>

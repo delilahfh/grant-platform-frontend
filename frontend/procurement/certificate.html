@@ -1,8 +1,0 @@
-
-<h2>Certificate of Receipt</h2>
-<textarea id=items rows=6 cols=50></textarea><br>
-<button onclick="gen()">Generate</button>
-<script src="../static/js/api.js"></script>
-<script>
-async function gen(){await api('/cor/create','POST',{items_text:items.value});alert('generated');}
-</script>

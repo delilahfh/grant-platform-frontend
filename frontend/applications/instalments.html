@@ -1,9 +1,0 @@
-
-<h2>Request Instalment</h2>
-<input id=amt placeholder="Amount number"><br>
-<input id=word placeholder="Amount words"><br>
-<button onclick="go()">Submit</button>
-<script src="../static/js/api.js"></script>
-<script>
-async function go(){await api('/instalments/create','POST',{amount_number:amt.value,amount_words:word.value});alert('ok');}
-</script>
